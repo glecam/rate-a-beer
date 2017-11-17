@@ -1,23 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { BeerService } from './beer.service';
+import { MockBeerService } from './mock.beer.service';
 import { IBeer } from './beer';
 
 @Component({
-    selector: 'pm-beers',
+    selector: 'br-beers',
     templateUrl: './beer-list.component.html',
 })
 
 export class BeerListComponent implements OnInit {
-
-    ngOnInit(): void {
-        console.log('on-init');
-    }
-
+    errorMessage: string;
     private _beerService;
 
     beers: IBeer[] = [];
 
-    constructor(beerService: BeerService) {
-        this._beerService = BeerService;
+    constructor(beerService: MockBeerService) {
+        this._beerService = beerService;
+    }
+
+    ngOnInit(): void {
+        console.log('on-init');
+        this.beers = this._beerService.getBeers()
+        .subscribe(beers => this.beers = beers, error => this.errorMessage = error);
     }
 }
