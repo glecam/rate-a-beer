@@ -4,26 +4,35 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BeerListComponent } from './beers/beer-list.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { RouterModule } from '@angular/router';
 import { CdkTableModule } from '@angular/cdk/table';
-import { MatTableModule } from '@angular/material';
+import { MatTableModule, MatCardModule } from '@angular/material';
 import { BeerService } from './beers/beer.service';
 import { MockBeerService } from './beers/mock.beer.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { StarComponent } from './beers/star.component';
+import { BeerDetailComponent } from './beers/details/beer-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BeerListComponent,
-    StarComponent
+    StarComponent,
+    BeerDetailComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     CdkTableModule,
     MatTableModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    MatCardModule,
+    RouterModule.forRoot([
+      { path: 'beers', component: BeerListComponent },
+      { path: 'beers/:id', component: BeerDetailComponent },
+      { path: '', redirectTo: 'beers', pathMatch: 'full' }, //TODO Add home page      
+      { path: '**', component: BeerListComponent }, //TODO add error page
+    ])
   ],
   providers: [MockBeerService],
   bootstrap: [AppComponent]

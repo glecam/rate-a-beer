@@ -4,25 +4,25 @@
 
       <ng-container matColumnDef="thumbImageUrl">
         <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <img [src]='element.thumbImageUrl' [title]='element.name' />
+        <mat-cell *matCellDef="let beer">
+          <img [src]='beer.thumbImageUrl' [title]='beer.name' />
         </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="name">
         <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        <mat-cell *matCellDef="let beer"><a [routerLink]="['/beers', beer.id]">{{beer.name}}</a> </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="brewery">
         <mat-header-cell *matHeaderCellDef> Brewery </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.brewery.name}} </mat-cell>
+        <mat-cell *matCellDef="let beer"> {{beer.brewery.name}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="rating">
         <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <br-star [rating]="element.rating"></br-star>
+        <mat-cell *matCellDef="let beer">
+          <br-star [rating]="beer.rating"></br-star>
         </mat-cell>
       </ng-container>
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

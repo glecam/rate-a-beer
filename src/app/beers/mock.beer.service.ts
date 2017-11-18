@@ -105,4 +105,13 @@ export class MockBeerService{
             }
         ];
     }
+
+    getBeerById(id: number): IBeer{
+
+        let beers = this.getBeers();
+        
+        let beer = beers.find(x => x.id === id); //TODO add error handling if not found
+        console.log(beer);
+        return beer;
+    }
 }

@@ -1,0 +1,7 @@
+.beer-card {
+  width: 400px;
+}
+.beer-header-image {
+  background-image: url('../../../assets/beer.png');
+  background-size: cover;
+}
