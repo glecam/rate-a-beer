@@ -9,5 +9,5 @@ import { MockBeerService } from './beers/mock.beer.service';
 })
 
 export class AppComponent {
-  title = 'Welcome to rate a beer!';
+  title = 'Rate a beer';
 }

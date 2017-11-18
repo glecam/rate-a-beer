@@ -5,6 +5,11 @@ import { AppComponent } from './app.component';
 import { BeerListComponent } from './beers/beer-list.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { CdkTableModule } from '@angular/cdk/table';
+import { MatTableModule } from '@angular/material';
+import { BeerService } from './beers/beer.service';
+import { MockBeerService } from './beers/mock.beer.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,9 +17,11 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    CdkTableModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [MockBeerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
