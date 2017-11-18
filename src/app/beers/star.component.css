@@ -1,0 +1,9 @@
+.checked {
+  color: orange;
+}
+.crop {
+  overflow: hidden;
+}
+div{
+  margin: auto;
+}

@@ -15,12 +15,11 @@ export class BeerService {
 
     getBeers(): Observable<IBeer[]> {
         const headers = new HttpHeaders().set("Authorization", "Token kVJzYfn9gRaGDFNrtMDuAexP");
-        return null;
-        
-        // var temp = this._httpClient
-        //     .get(this._beerUrl, { headers })
-        //     .subscribe(data => { return data }, error => { console.log(error) })
 
-        // console.log(temp);
+        this._httpClient
+            .get<IBeer[]>(this._beerUrl, { headers })
+            .subscribe(data => { return data }, error => { console.log(error) })
+
+        return null;
     }
 }
