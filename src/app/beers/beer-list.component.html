@@ -1,6 +1,6 @@
-<div>
-  <div class="beer-container mat-elevation-z8">
-    <mat-table #table [dataSource]="dataSource">
+<div class="beer-list-table">
+  <div class="beer-container mat-elevation-z3">
+    <mat-table #table [dataSource]="dataSource" matSort>
 
       <ng-container matColumnDef="thumbImageUrl">
         <mat-header-cell *matHeaderCellDef> </mat-header-cell>
@@ -10,17 +10,17 @@
       </ng-container>
 
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="center"> Name </mat-header-cell>
         <mat-cell *matCellDef="let beer"><a [routerLink]="['/beers', beer.id]">{{beer.name}}</a> </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="brewery">
-        <mat-header-cell *matHeaderCellDef> Brewery </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="center"> Brewery </mat-header-cell>
         <mat-cell *matCellDef="let beer"> {{beer.brewery.name}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="rating">
-        <mat-header-cell *matHeaderCellDef> Rating </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="center"> Rating </mat-header-cell>
         <mat-cell *matCellDef="let beer">
           <br-star [rating]="beer.rating"></br-star>
         </mat-cell>
