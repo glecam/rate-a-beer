@@ -22,6 +22,7 @@
       <ng-container matColumnDef="rating">
         <mat-header-cell *matHeaderCellDef mat-sort-header class="center"> Rating </mat-header-cell>
         <mat-cell *matCellDef="let beer">
+          <div *ngIf='!beer.rating'>No rating</div>
           <br-star [rating]="beer.rating"></br-star>
         </mat-cell>
       </ng-container>

@@ -8,18 +8,28 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class BeerService {
     private _beerUrl = 'https://icapps-beers.herokuapp.com/beers';
-
+    
     constructor(private _httpClient: HttpClient) {
 
     }
 
     getBeers(): Observable<IBeer[]> {
-        const headers = new HttpHeaders().set("Authorization", "Token kVJzYfn9gRaGDFNrtMDuAexP");
+       const headers = new HttpHeaders().set("Authorization", "Token kVJzYfn9gRaGDFNrtMDuAexP");
 
         this._httpClient
             .get<IBeer[]>(this._beerUrl, { headers })
             .subscribe(data => { return data }, error => { console.log(error) })
 
         return null;
+    }
+
+    updateBeerRating(id: number, rating: number) {
+        const httpHeaders = new HttpHeaders().set("Authorization", "Token kVJzYfn9gRaGDFNrtMDuAexP");
+        
+        let body = { "rating": rating };
+        this._httpClient.put(this._beerUrl + "/" + id, body, {
+            headers: httpHeaders
+        })
+        .subscribe();
     }
 }

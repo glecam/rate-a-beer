@@ -78,7 +78,7 @@ export class MockBeerService{
             {
                 "id": 6,
                 "name": "Kwak",
-                "rating": 4,
+                "rating": null,
                 "thumbImageUrl": "https://s3.eu-central-1.amazonaws.com/icapps-beers/thumb/Kwak.png",
                 "imageUrl": "https://s3.eu-central-1.amazonaws.com/icapps-beers/full/Kwak.png",
                 "brewery": {
