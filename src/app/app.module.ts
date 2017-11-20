@@ -6,13 +6,14 @@ import { BeerListComponent } from './beers/beer-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CdkTableModule } from '@angular/cdk/table';
-import { MatTableModule, MatCardModule, MatSortModule } from '@angular/material';
+import { MatTableModule, MatCardModule, MatSortModule, MatCheckboxModule, MatInputModule } from '@angular/material';
 import { BeerService } from './beers/beer.service';
 import { MockBeerService } from './beers/mock.beer.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { StarComponent } from './beers/star.component';
 import { BeerDetailComponent } from './beers/details/beer-detail.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatCardModule,
     MatSortModule,
     BrowserAnimationsModule,
+    MatCheckboxModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'beers', component: BeerListComponent },
       { path: 'beers/:id', component: BeerDetailComponent },

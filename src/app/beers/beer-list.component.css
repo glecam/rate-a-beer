@@ -26,3 +26,12 @@ mat-header-cell.mat-sort-header-sorted {
   display: flex;
   justify-content: center;
 }
+
+.table-header {
+  text-align: right;
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+.no-rating{
+  margin-top: 18px;
+}
