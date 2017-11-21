@@ -15,6 +15,7 @@ import { BeerDetailComponent } from './beers/details/beer-detail.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
+import { NguiMapModule} from '@ngui/map';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,8 @@ import { ErrorComponent } from './error/error.component';
     BrowserAnimationsModule,
     MatCheckboxModule,
     FormsModule,
+    NguiMapModule,
+    NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCx4KkciH1TgUmXJ9goxgCNPvrWiR59Lfo'}),
     RouterModule.forRoot([
       { path: 'beers', component: BeerListComponent },
       { path: 'beers/:id', component: BeerDetailComponent },
