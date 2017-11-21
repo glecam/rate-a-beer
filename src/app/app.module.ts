@@ -14,20 +14,22 @@ import { StarComponent } from './beers/star.component';
 import { BeerDetailComponent } from './beers/details/beer-detail.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BeerListComponent,
     StarComponent,
-    BeerDetailComponent
+    BeerDetailComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     CdkTableModule,
     MatTableModule,
-    AngularFontAwesomeModule,
+    AngularFontAwesomeModule,   
     MatCardModule,
     MatSortModule,
     BrowserAnimationsModule,
@@ -37,7 +39,7 @@ import { FormsModule } from '@angular/forms';
       { path: 'beers', component: BeerListComponent },
       { path: 'beers/:id', component: BeerDetailComponent },
       { path: '', redirectTo: 'beers', pathMatch: 'full' }, //TODO Add home page      
-      { path: '**', component: BeerListComponent }, //TODO add error page
+      { path: '**', component: ErrorComponent }, //TODO add error page
     ])
   ],
   providers: [MockBeerService],

@@ -29,8 +29,8 @@ mat-header-cell.mat-sort-header-sorted {
 
 .table-header {
   text-align: right;
-  min-height: 64px;
   padding: 8px 24px 0;
+  padding-top: 20px;
 }
 .no-rating{
   margin-top: 18px;

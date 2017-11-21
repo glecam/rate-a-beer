@@ -1,11 +1,12 @@
 <div class="beer-list-table">
   <div class="beer-container mat-elevation-z3">
       <div class="table-header">
-          <mat-checkbox color="primary" [(ngModel)]="onlyShowRatedBeers" (ngModelChange)="handleChange($event)">Only show rated beers</mat-checkbox>
+          <mat-checkbox color="primary" [(ngModel)]="onlyShowRatedBeers" (ngModelChange)="handleChange($event)">
+            Only show rated beers
+          </mat-checkbox>
         </div>
 
     <mat-table #table [dataSource]="dataSource" matSort>
-
       <ng-container matColumnDef="thumbImageUrl">
         <mat-header-cell *matHeaderCellDef> </mat-header-cell>
         <mat-cell *matCellDef="let beer">
