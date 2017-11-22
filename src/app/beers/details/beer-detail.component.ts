@@ -10,7 +10,11 @@ import { MockBeerService } from '../mock.beer.service';
 export class BeerDetailComponent implements OnInit {
 
   beer: IBeer;
-
+  marker = {
+    display: true,
+    lat: null,
+    lng: null,
+  };
   constructor(private _route: ActivatedRoute, private _beerService: MockBeerService) {
     
   }
@@ -19,5 +23,4 @@ export class BeerDetailComponent implements OnInit {
     let id = +this._route.snapshot.paramMap.get('id');
    this.beer = this._beerService.getBeerById(id);
   }
-
 }
