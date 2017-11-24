@@ -26,7 +26,8 @@ export class BeerDetailComponent implements OnInit {
   ratingChanged(beerRating: any): void {
     console.log(beerRating.rating);
     // this._beerService.getBeerById
-    this.openSnackBar("Rating updated successfully", "success-snackbar");
+    this.openSnackBar("✔ Rating updated successfully", "success-snackbar");
+    // this.openSnackBar("✘ Rating updated successfully", "success-snackbar");
   }
 
   openSnackBar(message: string, extraClass: string) {
