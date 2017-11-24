@@ -9,13 +9,11 @@ import { MatSnackBar, MatSnackBarVerticalPosition } from '@angular/material';
   styleUrls: ['./beer-detail.component.css']
 })
 export class BeerDetailComponent implements OnInit {
+  map: any;
 
   beer: IBeer;
-  marker = {
-    display: true,
-    lat: null,
-    lng: null,
-  };
+  private _verticalSnackBarPosition: MatSnackBarVerticalPosition = 'top';
+
   constructor(private _route: ActivatedRoute, private _beerService: MockBeerService, public snackBar: MatSnackBar) {
 
   }
@@ -27,15 +25,24 @@ export class BeerDetailComponent implements OnInit {
 
   ratingChanged(beerRating: any): void {
     console.log(beerRating.rating);
-    this._beerService.getBeerById
-   this.openSnackBar("success");
+    // this._beerService.getBeerById
+    this.openSnackBar("Rating updated successfully", "success-snackbar");
   }
 
-  openSnackBar(message: string) {
-    let verticalPosition: MatSnackBarVerticalPosition = 'top';
-    
+  openSnackBar(message: string, extraClass: string) {
     this.snackBar.open(message, null, {
-      duration: 1500, verticalPosition: verticalPosition
+      duration: 1500,
+      verticalPosition: this._verticalSnackBarPosition,
+      extraClasses: [extraClass]
     });
+  }
+
+  initMap(event: any) {
+    this.map = event;
+  }
+  
+  //https://github.com/ng2-ui/map/issues/141  
+  refreshMap() {
+    google.maps.event.trigger(this.map, 'resize');
   }
 }

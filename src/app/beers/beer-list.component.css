@@ -22,11 +22,6 @@ mat-header-cell.mat-sort-header-sorted {
   color: black;
 }
 
-.center{
-  display: flex;
-  justify-content: center;
-}
-
 .table-header {
   text-align: right;
   padding: 8px 24px 0;

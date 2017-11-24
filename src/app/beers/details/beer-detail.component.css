@@ -2,6 +2,10 @@
   width: 900px;
 }
 .beer-header-image {
-  background-image: url('../../../assets/beer.png');
+  background-image: url('../../../assets/back.png');
   background-size: cover;
+}
+
+.beer-details{
+  /* height: */
 }

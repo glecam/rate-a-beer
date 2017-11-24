@@ -6,7 +6,7 @@ import { BeerListComponent } from './beers/beer-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CdkTableModule } from '@angular/cdk/table';
-import { MatTableModule, MatCardModule, MatSortModule, MatCheckboxModule, MatInputModule } from '@angular/material';
+import { MatTableModule, MatCardModule, MatSortModule, MatCheckboxModule, MatInputModule, MatSnackBarModule } from '@angular/material';
 import { BeerService } from './beers/beer.service';
 import { MockBeerService } from './beers/mock.beer.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './error/error.component';
 import { NguiMapModule} from '@ngui/map';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BeerRatingComponent } from './beers/details/beer-rating/beer-rating.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     BeerListComponent,
     StarComponent,
     BeerDetailComponent,
-    ErrorComponent
+    ErrorComponent,
+    BeerRatingComponent,    
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FormsModule,
     NguiMapModule,
     FlexLayoutModule,
+    MatSnackBarModule,
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCx4KkciH1TgUmXJ9goxgCNPvrWiR59Lfo'}),
     RouterModule.forRoot([
       { path: 'beers', component: BeerListComponent },
