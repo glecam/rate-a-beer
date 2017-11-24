@@ -15,22 +15,24 @@
           </div>
         </div>
         <div fxFlex="50" class="beer-details">
-            <h3><b>Brewery details</b></h3>
+          <div>
             <div>
-              <label>{{beer.brewery.name}}</label>
+              <label>
+                <b>{{beer.brewery.name}}</b>
+              </label>
             </div>
             <div>
               <label>{{beer.brewery.address}}</label>
             </div>
             <div>
-              <label>{{beer.brewery.city}}</label>
+              <label>{{beer.brewery.city}} - {{beer.brewery.country}}</label>
             </div>
-            <div>
-              <label>{{beer.brewery.country}}</label>
-            </div>
-          <ngui-map [center]='beer.brewery.address' (mapReady$)="initMap($event)" style="height:230px" >
-            <marker [position]='beer.brewery.address' animation="DROP"></marker>
-          </ngui-map>
+          </div>
+          <div class="center">
+            <ngui-map [center]='beer.brewery.address' (mapReady$)="initMap($event)" style="height:290px; width:350px;">
+              <marker [position]='beer.brewery.address' animation="DROP"></marker>
+            </ngui-map>
+          </div>
         </div>
       </div>
     </mat-card-content>
